@@ -1,0 +1,16 @@
+# AppBundle/EventListener/config/listenerServices.yml
+services:
+   event_listener.stashed_data_package_phase:
+        class: AppBundle\EventListener\StashedDataPackagePhase
+        arguments:
+            salter: @service.utility.salter
+            hasher: @service.utility.hasher
+            cipher: @service.utility.cipher
+            yamler: @service.utility.yamler
+
+            flashStorage: @service.storage.flash_storage
+
+            stashed_data_package: @entity_manager.stashed_data_package
+            cipher_file:          @entity_manager.cipher_file
+        tags:
+            - { name: doctrine.entity_listener }

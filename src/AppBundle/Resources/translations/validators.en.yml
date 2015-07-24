@@ -1,0 +1,54 @@
+# src/AppBundle/Resources/translations/validators.en.yml
+stashed_data_package:
+    time_to_live:
+        measure:
+            not_blank: Time units of message's lifetime should be set
+            choice:    Time units can be set in minutes, hours or days
+        number:
+            not_blank: Message's lifetime should be set
+            is_number: Необходимо числовое значение Should be a numeric value
+            value:
+                min: Value should not be less than 1
+                max: Value should not be greater than 60480
+
+    hash:
+        valid: Incorrect hash value [<o>]
+
+    hash_beta:
+        not_blank: hash value β should not be empty [<o>]
+
+    hash_gamma:
+        not_blank: hash value γ should not be empty [<o>]
+
+    data:
+        not_blank: Message should not be empty
+        length:
+            max: Message should not contain more than 4200 symbols
+
+    blank_field:
+        blank: Better leave this field blank, Mister Robot [<o>]
+
+    method:
+        is_time_to_live_number_fits: Maximum message's lifetime is 42 days
+
+    pass_phrase:
+        not_blank: Nothing will happen without Password
+
+    salt_gamma:
+        not_blank: "Message cannot be decrypted without [Landmark]"
+        valid:     "This does not look like a [Landmark]"
+
+feedback:
+    name:
+        not_blank: Enter name or pseudonym
+        length:
+            max: Name is too long for this form
+
+    email:
+        valid: Here could only be a valid e-mail
+
+    message:
+        not_blank: If you have something to say, write it
+        length:
+            min: Feedback is too short to get the point
+            max: Feedback is too long to get the point

@@ -1,0 +1,35 @@
+{# src/AppBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    {{ 'default.title'|trans }} | {{ 'default.subtitle'|trans }}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/builds/css/bundle.min.css') }}">
+{% endblock %}
+
+{% block favicons %}
+    <meta name="msapplication-TileImage" content="{{ asset('bundles/app/build/images/favicons/ms/144x144.png') }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/57x57.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/60x60.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/72x72.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/76x76.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/114x114.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/120x120.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/144x144.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/152x152.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('bundles/app/builds/images/favicons/apple/180x180.png') }}">
+
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/builds/images/favicons/16x16.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/builds/images/favicons/32x32.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/builds/images/favicons/96x96.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/builds/images/favicons/160x160.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('bundles/app/builds/images/favicons/192x192.png') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/app/builds/js/bundle.min.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,151 @@
+# AppBundle/Resources/translations/messages.en.yml
+default:
+    title:    "[RavelCast]"
+    subtitle: Anonymous information exchange utility
+
+manifest:
+    title: Manifest
+    truth: >
+        %paragraph_open%My identity is irrelevant. My name is unimportant. Only information I produce has
+        sense.%paragraph_close%
+        %paragraph_open%Information is our property. The product of our existence. Our most valuable possession. Our past
+        and our future. Our information belongs only to us, and to those who we %accent_open%WANT%accent_close% to share it
+        with.%paragraph_close%
+        %paragraph_open%Those who receive our information without our permission are %accent_open%THIEVES%accent_close%.
+        Those who make us think that our information is safe while tracking it are %accent_open%LIARS%accent_close%. They
+        steal our past and lie about our future without any right to do so.%paragraph_close%
+        %paragraph_open%This is not the way it should be. This is not the way we should accept. We can resist.
+        I can.%paragraph_close%
+        %paragraph_open%I want to be the only one who owns my information. The one who possess my thoughts. Who knows what
+        I’m about to say. Who knows what I’m about to do. What I’m about to share. With those who I
+        %accent_open%TRUST%accent_close%. I want to be the only one who knows about those who knows what I know. We want.
+        And we not just want.%paragraph_close%
+        %paragraph_open%%accent_open_ultimate%WE DEMAND%accent_close%%paragraph_close%
+
+index:
+    message:
+        sent: exchanges commited
+        send: send
+        get:  receive
+    more:
+        look:   look
+        inside: inside
+    feedback:
+        title:    Got propositions?
+        subtitle: Anyone could potentially participate in project's development, but this time a bit less anonymously
+    quick_tabs:
+        main: to main
+
+anatomy:
+    title: Anatomy of RavelCast
+
+    intention:
+        title: Intention
+        text: >
+            %paragraph_open%RavelCast is a utility to allow anonymous sending and receiving of encrypted text messages,
+            which is fully respects privacy of your personal data.%paragraph_close%
+            %paragraph_open%Information that you do not want or afraid to send over the Internet can be transmitted
+            through RavelCast. Without registration and with no strings attached.%paragraph_close%
+            %paragraph_open%The main thing is that your identity in RavelCast cannot be identified by your messages.
+            It’s just information that is not bound to a specific user.%paragraph_close%
+
+    implementation:
+        title: Implementation
+        text: >
+            %paragraph_open%From the beginning of the project development we knew that user of RavelCast should not be
+            shackled with any chains of demands and requirements.%paragraph_close%
+            %paragraph_open%With this thought we’ve raised four pillars which would allow confidential and easy exchange
+            of relatively short (about 4200 symbols) secret messages.%paragraph_close%
+        feature:
+            anonymity:
+                title: Completely anonymous
+                text: >
+                    %paragraph_open%No registration. No authorization. RavelCast doesn’t require your name, email, phone
+                    number or social network account. Nothing at all. All messages stored without any clues about identity
+                    of sender or recipient.%paragraph_close%
+            crypting:
+                title: Data encryption
+                text: >
+                    %paragraph_open%Message is encrypted on the client side before sending and additionally on the server
+                    side. Your original message and password doesn’t even leave your browser and are not transferred over
+                    the Web, excluding probability of being read by man-in-the-middle or server holders.%paragraph_close%
+            sweeping:
+                title: Covering your tracks
+                text: >
+                    %paragraph_open%Messages are one-off and removed upon receiving. Even before you get the message,
+                    RavelCast will forever forget about its existence. In addition, each message has an adjustable lifetime,
+                    and will be deleted at the end of it – even if that message remains unread.%paragraph_close%
+            defense:
+                title: Comprehensive protection
+                text: >
+                    %paragraph_open%TLS (Transport Layer Security) is used to establish secured connection during messages
+                    exchange. Data is encrypted with most reliable of the existing cryptographic algorithms and hash
+                    functions. RavelCast itself is designed based on well-tested and stable software platform.%paragraph_close%
+
+    operation:
+        title: Operation
+        password:
+            title: Come up with Password
+            text: >
+                %paragraph_open%Create Password and tell it to the person with whom you want to exchange secret messages.
+                Or you can use RavelCast as temporary storage for your private information – in this case, keep the
+                password only to yourself.%paragraph_close%
+        landmark:
+            title: Transfer [Landmark]
+            text: >
+                %paragraph_open%This is a partial message identifier that can be freely transmitted through social networks,
+                instant messengers, email or SMS to the person who should receive your message. The [Landmark] itself is
+                useless without your password: it won’t allow anyone to receive your message - or even learn about its
+                existence.%paragraph_close%
+        send_message:
+            title: To send a message
+            text: >
+                %paragraph_open%On the start page, press “Send message” button, and the “Ravel” form should appear to your
+                left. Enter your message and password in it, and press “Send”. Additionally, you can specify the lifetime
+                of the message, which is 42 hours by default (maximum lifetime is 42 days). After sending you will receive
+                a [Landmark].%paragraph_close%
+        get_message:
+            title: To get a message
+            text: >
+                %paragraph_open%On the start page, press “Receive message” button, and the “Unravel” form should appear to
+                your right. Enter [Landmark] and your Password in it and press “Receive”. If these credentials are correct
+                and message exists, you will receive it%paragraph_close%
+
+recommendations:
+    title: Recommendations
+    item:
+        1: >
+            Come up with strong enough Password. Change it when communicating with different people, and also change it
+            from time to time (remember Hogwarts?). The Password itself could be either a single word, or sequence of
+            symbols, or even a complete sentence.
+        2: >
+            The best and most secure way to share your password with somebody is to tell it in person.
+        3: >
+            For maximum security try to write message in a way that only you and your contact will understand.
+        4: >
+            Try to make sure that your computer (device) is not observed through software like Radmin, does not contain
+            keyloggers and is not infected with viruses.
+        5: >
+            In order to ensure general anonymity in the Web, and particularly when working with RavelCast, use TOR Browser
+            or similar software which masks your network address and browser’s fingerprint.
+
+footer: >
+    © %link_open%%developers_agency_name%%link_close%, 2015 - XXXX. No rights reserved.
+    Usage of the website personal materials without authors' permission is highly encouraged.
+
+error:
+    ravel: >
+        Unforeseen circumstances have arrived during the message encryption
+    unravel: >
+        There is no such message. It could be that it's already read. Or its lifetime has ended.
+        Or perhaps it never existed
+    spam:
+        This message looks quite suspicious, almost like spam
+    broken_sequence: >
+        System's processing sequence was broken. Interesting, how did that happen?
+
+error_state:
+    title:
+        404: nothing to do here
+        500: something went wrong
+    back: back to biz

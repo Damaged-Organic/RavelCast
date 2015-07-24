@@ -1,0 +1,127 @@
+{# src/AppBundle/Resources/views/Form/ravel.html.twig #}
+{% form_theme ravelForm _self %}
+
+{{ form_start(ravelForm, {'attr': {'id': "ravel-form", 'autocomplete': "off"}}) }}
+
+    {% do ravelForm.hashBeta.setRendered %}
+    {% do ravelForm.hashGamma.setRendered %}
+
+    <div class="field-holder">
+        {{ form_widget(ravelForm.passPhrase, {
+            'attr': {
+                'id': "stashedDataPackage_passPhrase", 'class': "password",
+                'data-rule-required': "true", 'data-msg-required': 'stashed_data_package.pass_phrase.not_blank'|trans({}, 'validators')
+            }
+        }) }}
+        {% block form_ravel_label_passPhrase %}
+            {{ block('base_form_label') }}
+            <label for="stashedDataPackage_passPhrase">
+                {{ ravelForm.passPhrase.vars.label|trans({}, 'forms') }}
+                <span class="toggle-password"></span>
+            </label>
+        {% endblock %}
+    </div>
+
+    <div class="field-holder">
+        {{ form_widget(ravelForm.data, {
+            'attr': {
+                'id': "stashedDataPackage_data",
+                'data-rule-required': "true", 'data-msg-required': 'stashed_data_package.data.not_blank'|trans({}, 'validators'),
+                'data-rule-maxlength': "4200", 'data-msg-maxlength': 'stashed_data_package.data.length.max'|trans({}, "validators")
+            }
+        }) }}
+        {% block form_ravel_label_data %}
+            {{ block('base_form_label') }}
+            <label for="stashedDataPackage_data">
+                {{ ravelForm.data.vars.label|trans({}, 'forms') }}
+            </label>
+        {% endblock %}
+    </div>
+
+    <div class="set-holder">
+        <div class="field-holder">
+            {{ form_widget(ravelForm.timeToLiveNumber, {
+                'attr': {
+                    'id': "stashedDataPackage_timeToLiveNumber",
+                    'data-rule-required': "true", 'data-msg-required': 'stashed_data_package.time_to_live.number.not_blank'|trans({}, 'validators'),
+                    'data-rule-number': "true", 'data-msg-number': 'stashed_data_package.time_to_live.number.is_number'|trans({}, 'validators'),
+                    'data-rule-min': "1", 'data-msg-min': 'stashed_data_package.time_to_live.number.value.min'|trans({}, 'validators'),
+                    'data-rule-max': "60480", 'data-msg-max': 'stashed_data_package.time_to_live.number.value.max'|trans({}, 'validators')
+                }
+            }) }}
+            {% block form_ravel_label_timeToLiveNumber %}
+                {{ block('base_form_label') }}
+                <label for="stashedDataPackage_timeToLiveNumber">
+                    {{ ravelForm.timeToLiveNumber.vars.label|trans({}, 'forms') }}
+                </label>
+            {% endblock %}
+        </div>
+        <div class="field-holder choose-box">
+            {{ form_widget(ravelForm.timeToLiveMeasure.0, {
+                'id': "stashedDataPackage_timeToLiveMeasure_minutes"
+            }) }}
+            {% block radio_ravel_label_timeToLiveMeasure_minutes %}
+                {{ block('base_form_label') }}
+                <label for="stashedDataPackage_timeToLiveMeasure_minutes">
+                    <span class="box"></span>
+                    <span class="text">{{ ravelForm.timeToLiveMeasure.0.vars.label|trans({}, 'forms') }}</span>
+                </label>
+            {% endblock %}
+        </div>
+        <div class="field-holder choose-box middle">
+            {{ form_widget(ravelForm.timeToLiveMeasure.1, {
+                'id': "stashedDataPackage_timeToLiveMeasure_hours"
+            }) }}
+            {% block radio_ravel_label_timeToLiveMeasure_hours %}
+                {{ block('base_form_label') }}
+                <label for="stashedDataPackage_timeToLiveMeasure_hours">
+                    <span class="box"></span>
+                    <span class="text">{{ ravelForm.timeToLiveMeasure.1.vars.label|trans({}, 'forms') }}</span>
+                </label>
+            {% endblock %}
+        </div>
+        <div class="field-holder choose-box">
+            {{ form_widget(ravelForm.timeToLiveMeasure.2, {
+                'id': "stashedDataPackage_timeToLiveMeasure_days"
+            }) }}
+            {% block radio_ravel_label_timeToLiveMeasure_days %}
+                {{ block('base_form_label') }}
+                <label for="stashedDataPackage_timeToLiveMeasure_days">
+                    <span class="box"></span>
+                    <span class="text">{{ ravelForm.timeToLiveMeasure.2.vars.label|trans({}, 'forms') }}</span>
+                </label>
+            {% endblock %}
+        </div>
+    </div>
+
+    {{ form_widget(ravelForm.blankField, {
+        'attr': {
+            'class': "not-visible"
+        }
+    }) }}
+
+    <input type="hidden" name="honeyPot" value="" id="honey-pot">
+
+    <button type="submit">
+        <span class="text">{{ 'ravel.submit'|trans({}, 'forms') }}</span>
+        <span class="icon icon-plane"></span>
+    </button>
+
+{{ form_end(ravelForm) }}
+
+<div class="process-holder">
+    <div class="inner">
+        <div class="loader-holder">
+            <span class="bar-holder">
+                <span class="symbols">WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2</span>
+                <span class="bar"></span>
+            </span>
+        </div>
+        <div class="response-holder">
+            <div class="response" id="ravel-response"></div>
+            <span class='icon icon-duplicate copy' id='ravel-clipboard-button' data-clipboard-target='clipboard-salt'></span>
+        </div>
+    </div>
+    <span class='icon icon-close close end-processing'></span>
+</div>
+<div class="error-holder"></div>

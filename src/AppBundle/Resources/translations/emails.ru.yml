@@ -1,0 +1,3 @@
+# src/AppBundle/Resources/translations/emails.ru.yml
+feedback:
+    subject: RavelCast (%datetime%) - новое сообщение обратной связи

@@ -1,0 +1,47 @@
+# src/AppBundle/Resources/translations/forms.ua.yml
+ravel:
+    pass_phrase:
+        label:       Пароль
+        placeholder: "[тут має бути секретний Пароль]"
+
+    time_to_live_number:
+        label:       Час життя повідомлення
+        placeholder: "[тут має бути час життя повідомлення в обраних одиницях]"
+
+    data:
+        label:       Повідомлення
+        placeholder: "[тут має бути повідомлення]"
+
+    choice:
+        minutes: Хвилин
+        hours:   Годин
+        days:    Днів
+    #invalid_message: Міра часу має бути вказана у хвилинах, годинах або днях
+
+    submit: зашифрувати
+
+unravel:
+    pass_phrase:
+        label:       Пароль
+        placeholder: "[тут має бути секретний Пароль]"
+
+    salt_gamma:
+        label:       "[Маркер]"
+        placeholder: "[тут має бути [Маркер] очікуваного повідомлення]"
+
+    submit: расшифрувати
+
+feedback:
+    name:
+        label:       Ім'я
+        placeholder: "[тут має бути ім'я або псевдонім]"
+
+    email:
+        label:       E-mail
+        placeholder: "[тут може бути адреса електронної пошти]"
+
+    message:
+        label:       Повідомлення
+        placeholder: "[тут має бути повідомлення]"
+
+    submit: відправити

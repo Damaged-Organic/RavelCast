@@ -1,0 +1,8 @@
+{# app/Resources/TwigBundle/views/Exception/error.html.twig #}
+{% extends 'TwigBundle::errorLayout.html.twig' %}
+
+{% block exception %}
+    <h2>{{ exception.statusCode }} - {{ exception.message }}</h2>
+    <h2>{{ 'error_state.title.500'|trans({}, "messages", locale) }}</h2>
+    <span>500</span>
+{% endblock %}

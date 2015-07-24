@@ -1,0 +1,35 @@
+{# app/Resources/TwigBundle/views/errorLayout.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{# Fast "_locale" hack for twig exception #}
+{% set host = app.request.getHost|split(".") %}
+{% if host[0] in ['ua','en','ru'] %}
+    {% set locale = host[0] %}
+{% else %}
+    {% set locale = 'ru' %}
+{% endif %}
+
+{% block title %}
+    {{ exception.statusCode }} | {{ 'default.title'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+        <main id="content">
+            <section class="section">
+                {% block exception %}{% endblock %}
+                {% block backlink %}
+                    <div class="button">
+                        <a href="{{ path('index', { '_locale': locale }) }}">
+                            <span class="text">{{ 'error_state.link.home'|trans({}, "messages", locale) }}</span>
+                            <span class="icon icon-home"></span>
+                        </a>
+                    </div>
+                {% endblock %}
+            </section>
+            <div id="sine-wave-holder">
+                <canvas id="sine-wave"></canvas>
+            </div>
+        </main>
+    </div>
+{% endblock %}

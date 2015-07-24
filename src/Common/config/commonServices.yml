@@ -1,0 +1,9 @@
+# Common/config/commonServices.yml
+doctrine:
+    orm:
+        entity_listener_resolver: doctrine.entity_listener_resolver
+
+services:
+    doctrine.entity_listener_resolver:
+        class:     Common\Doctrine\EntityListenerResolver
+        arguments: [ "@service_container" ]

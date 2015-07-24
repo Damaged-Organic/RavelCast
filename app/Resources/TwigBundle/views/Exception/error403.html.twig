@@ -1,0 +1,18 @@
+{# app/Resources/TwigBundle/views/Exception/error403.html.twig #}
+{% extends 'TwigBundle::errorLayout.html.twig' %}
+
+{% block exception %}
+    <h2>{{ ( exception.message ) ?: 'error_state.title.403'|trans({}, "messages", locale) }}</h2>
+    <span>403</span>
+{% endblock %}
+
+{% if exception.message %}
+    {% block backlink %}
+        <div class="button">
+            <a href="http://{{ locale }}.brasst.net.ua" target="_blank">
+                <span class="text">{{ 'error_state.link.brasst'|trans({}, "messages", locale) }}</span>
+                <span class="icon icon-home"></span>
+            </a>
+        </div>
+    {% endblock %}
+{% endif %}

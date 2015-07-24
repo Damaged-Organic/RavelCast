@@ -1,0 +1,47 @@
+# src/AppBundle/Resources/translations/forms.ru.yml
+ravel:
+    pass_phrase:
+        label:       Пароль
+        placeholder: "[здесь должен быть секретный Пароль]"
+
+    time_to_live_number:
+        label:       Время жизни сообщения
+        placeholder: "[здесь должно быть время жизни сообщения в выбранных единицах]"
+
+    data:
+        label:       Сообщение
+        placeholder: "[здесь должно быть сообщение]"
+
+    choice:
+        minutes: Минут
+        hours:   Часов
+        days:    Дней
+    #invalid_message: Мера времени должна быть указана в минутах, часах или днях
+
+    submit: зашифровать
+
+unravel:
+    pass_phrase:
+        label:       Пароль
+        placeholder: "[здесь должен быть секретный Пароль]"
+
+    salt_gamma:
+        label:       "[Маркер]"
+        placeholder: "[здесь должен быть [Маркер] ожидаемого сообщения]"
+
+    submit: расшифровать
+
+feedback:
+    name:
+        label:       Имя
+        placeholder: "[здесь должно быть имя или псевдоним]"
+
+    email:
+        label:       E-mail
+        placeholder: "[здесь может быть адрес электронной почты]"
+
+    message:
+        label:       Сообщение
+        placeholder: "[здесь должно быть сообщение]"
+
+    submit: отправить

@@ -1,0 +1,72 @@
+{# src/AppBundle/Resources/views/Form/unravel.html.twig #}
+{% form_theme unravelForm _self %}
+
+{{ form_start(unravelForm, {'attr': {'id': "unravel-form", 'autocomplete': "off"}}) }}
+
+    {% do unravelForm.hashGamma.setRendered %}
+
+    <div class="field-holder">
+        {{ form_widget(unravelForm.passPhrase, {
+            'attr': {
+                'id': "un_stashedDataPackage_passPhrase", 'class': "password",
+                'data-rule-required': "true", 'data-msg-required': 'stashed_data_package.pass_phrase.not_blank'|trans({}, 'validators')
+            }
+        }) }}
+        {% block form_unravel_label_passPhrase %}
+            {{ block('base_form_label') }}
+            <label for="stashedDataPackage_passPhrase">
+                {{ unravelForm.passPhrase.vars.label|trans({}, 'forms') }}
+                <span class="toggle-password"></span>
+            </label>
+        {% endblock %}
+    </div>
+
+    <div class="field-holder">
+        {{ form_widget(unravelForm.saltGamma, {
+            'attr': {
+                'id': "stashedDataPackage_saltGamma",
+                'data-rule-required': "true", 'data-msg-required': 'stashed_data_package.salt_gamma.not_blank'|trans({}, 'validators'),
+                'data-rule-regex': "^\\[?[\\/\.A-Za-z0-9]{22}\\]?$", 'data-msg-regex': 'stashed_data_package.salt_gamma.valid'|trans({}, 'validators')
+            }
+        }) }}
+        {% block form_unravel_label_saltGamma %}
+            {{ block('base_form_label') }}
+            <label for="stashedDataPackage_saltGamma">{{ unravelForm.saltGamma.vars.label|trans({}, 'forms') }}</label>
+        {% endblock %}
+    </div>
+
+    {{ form_widget(unravelForm.blankField, {
+        'attr': {
+            'class': "not-visible"
+        }
+    }) }}
+
+    <input type="hidden" name="honeyPot" value="" id="un-honey-pot">
+
+    <button type="submit">
+        <span class="text">{{ 'unravel.submit'|trans({}, 'forms') }}</span>
+        <span class="icon icon-letter"></span>
+    </button>
+
+{{ form_end(unravelForm) }}
+
+<div class="process-holder">
+    <div class="inner">
+        <div class="loader-holder">
+            <span class="bar-holder">
+                <span class="symbols">WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2</span>
+                <span class="bar"></span>
+            </span>
+        </div>
+        <div class="response-holder">
+            <div class="response">
+                <div class="message-holder">
+                    <div class="message" id="unravel-message"></div>
+                </div>
+            </div>
+            <span class='icon icon-duplicate copy' id='unravel-clipboard-button' data-clipboard-target='unravel-message'></span>
+        </div>
+    </div>
+    <span class='icon icon-close close end-processing'></span>
+</div>
+<div class="error-holder"></div>

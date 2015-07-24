@@ -1,0 +1,25 @@
+# AppBundle/Entity/Manager/config/managerServices.yml
+services:
+    entity_manager.temp_data_package:
+        class:     AppBundle\Entity\Manager\TempDataPackageManager
+        arguments:
+            manager:     @doctrine.orm.entity_manager
+            entityClass: AppBundle\Entity\TempDataPackage
+
+    entity_manager.stashed_data_package:
+        class:     AppBundle\Entity\Manager\StashedDataPackageManager
+        arguments:
+            manager:     @doctrine.orm.entity_manager
+            entityClass: AppBundle\Entity\StashedDataPackage
+
+    entity_manager.cipher_file:
+        class:     AppBundle\Entity\Manager\CipherFileManager
+        arguments:
+            manager:     @doctrine.orm.entity_manager
+            entityClass: AppBundle\Entity\CipherFile
+
+    entity_manager.package_counter:
+        class:     AppBundle\Entity\Manager\PackageCounterManager
+        arguments:
+            manager:     @doctrine.orm.entity_manager
+            entityClass: AppBundle\Entity\CipherFile

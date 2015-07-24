@@ -1,0 +1,19 @@
+{# app/Resources/views/base.html.twig #}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        {% block meta %}{% endblock %}
+        {% block locale %}{% endblock %}
+        {% block favicons %}{% endblock %}
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

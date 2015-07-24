@@ -1,0 +1,4 @@
+# src/AppBundle/Resources/translations/responses.ua.yml
+feedback:
+    success: Дякуємо за відгук. Ми обов'яковово розглянемо його та зробимо відповідні висновки
+    fail:    Щось пішло не так. Будь ласка, спробуйте відправити відгук ще раз

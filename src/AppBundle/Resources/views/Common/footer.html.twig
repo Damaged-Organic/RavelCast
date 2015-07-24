@@ -1,0 +1,17 @@
+{# src/AppBundle/Resources/views/Common/footer.html.twig #}
+<footer id="footer" class="clearfix">
+    <div id="to-top">
+        <span class="icon icon-arrow-up"></span>
+        <span class="icon icon-arrow-up"></span>
+        <span class="icon icon-arrow-up"></span>
+    </div>
+    <small>
+        {{ 'footer'
+            |trans({
+                '%developers_agency_name%': developers_agency.name,
+                '%link_open%': "<a href=" ~ developers_agency.link ~ "/" ~ app.request.locale ~ ">", '%link_close%': "</a>"
+            })
+            |raw
+        }}
+    </small>
+</footer>

@@ -1,0 +1,18 @@
+{# src/AppBundle/Resources/views/Special/manifest.html.twig #}
+<div id="manifest" class="pop-up-holder">
+    <div class="inner">
+        <span class="close icon-close"></span>
+        <span class="icon icon-anonymous"></span>
+        <h2>{{ 'manifest.title'|trans }}</h2>
+        {{ 'manifest.truth'
+            |trans({
+                '%paragraph_open%': "<p>",
+                '%paragraph_close%': "</p>",
+                '%accent_open%': "<span>",
+                '%accent_open_ultimate%': "<span class=\"ultimate\">",
+                '%accent_close%': "</span>"
+            })
+            |raw
+        }}
+    </div>
+</div>

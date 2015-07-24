@@ -1,0 +1,232 @@
+{# src/AppBundle/Resources/views/State/indexNew.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block meta %}
+    <meta name="description" content="" >
+    <meta name="robots" content="noindex, nofollow, noarchive">
+{% endblock %}
+
+{% block locale %}
+    <link rel="canonical" href="{{ url('index_default') }}">
+    <link rel="alternate" href="{{ url('index', { '_locale': "ru" }) }}" hreflang="x-default">
+    <link rel="alternate" href="{{ url('index', { '_locale': "ru" }) }}" hreflang="ru-ru">
+    <link rel="alternate" href="{{ url('index', { '_locale': "ua" }) }}" hreflang="uk-ua">
+    <link rel="alternate" href="{{ url('index', { '_locale': "en" }) }}" hreflang="en-us">
+{% endblock %}
+
+{% block body %}
+    <div id="page">
+        <main id="content">
+            <div class="section full" id="intro">
+                <div class="grid">
+                    <div id="panel-holder">
+                        <div class="cell panel ravel">
+                            <div class="section" id="ravel">
+                                <div class="back-panel">
+                                    <div class="tooltip-icon-holder" data-tooltip="{{ 'index.message.get'|trans }}">
+                                        <span class="icon icon-letter switch-panel" data-switch="right"></span>
+                                    </div>
+                                    <div class="tooltip-icon-holder" data-tooltip="{{ 'index.quick_tabs.main'|trans }}">
+                                        <span class="icon icon-arrow-right close-panel"></span>
+                                    </div>
+                                </div>
+
+                                {% render controller('AppBundle:Form:ravel') %}
+
+                            </div>
+                        </div>
+                        <div class="cell panel main">
+
+                            {% include 'AppBundle:Common:header.html.twig' only %}
+
+                            <div class="logo"><span class="triangle"></span></div>
+                            <h1>{{ 'default.title'|trans }}</h1>
+                            <h2>{{ 'default.subtitle'|trans }}</h2>
+                            <div id="counter-holder">
+                                <div class="counter">
+                                    <span class="counter-part top"></span>
+                                    <span class="counter-part middle"></span>
+                                    <span class="counter-part bottom"></span>
+                                </div>
+                                <div class="counter-content">
+                                    <span class="icon icon-keyhole"></span>
+                                    <span class="counter-clock" id="count-holder">{{ packagesNumber }}</span>
+                                    <span class="text">{{ 'index.message.sent'|trans }}</span>
+                                </div>
+                            </div>
+                            <div class="button send switch-panel" data-switch="left">
+                                <a href="#" tabindex="-1">
+                                    <span class="text">{{ 'index.message.send'|trans }}</span>
+                                    <span class="icon icon-plane"></span>
+                                </a>
+                            </div>
+                            <div class="button get switch-panel" data-switch="right">
+                                <a href="#" tabindex="-1">
+                                    <span class="text">{{ 'index.message.get'|trans }}</span>
+                                    <span class="icon icon-letter"></span>
+                                </a>
+                            </div>
+                            <div class="intro-more hex">
+                                <span class="hex-part"></span>
+                                <div class="hex-content">
+                                    <span>{{ 'index.more.look'|trans }}</span>
+                                    <span class="line"></span>
+                                    <span>{{ 'index.more.inside'|trans }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cell panel unravel">
+                            <div class="section" id="unravel">
+                                <div class="back-panel">
+                                    <div class="tooltip-icon-holder" data-tooltip="{{ 'index.quick_tabs.main'|trans }}">
+                                        <span class="icon icon-arrow-left close-panel"></span>
+                                    </div>
+                                    <div class="tooltip-icon-holder" data-tooltip="{{ 'index.message.send'|trans }}">
+                                        <span class="icon icon-plane switch-panel" data-switch="left"></span>
+                                    </div>
+                                </div>
+
+                                {% render controller('AppBundle:Form:unravel') %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sine-wave-holder">
+                    <canvas id="sine-wave"></canvas>
+                </div>
+
+                {% include 'AppBundle:Special:manifest.html.twig' only %}
+
+            </div>
+            <section class="section" id="anatomy">
+                <h2>{{ 'anatomy.title'|trans }}</h2>
+                <div class="grid">
+                    <div class="row intention">
+                        <article class="cell">
+                            <h2>{{ 'anatomy.intention.title'|trans }}</h2>
+                            {{ 'anatomy.intention.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                        </article>
+                        <div class="cell hex-grid">
+                            <div class="hex-holder">
+                                <div class="hex">
+                                    <span class="hex-part"></span>
+                                    <span class="icon icon-brain"></span>
+                                </div>
+                                <div class="hex"><span class="hex-part"></span></div>
+                                <div class="hex"><span class="hex-part"></span></div>
+                                <div class="hex"><span class="hex-part"></span></div>
+                                <div class="hex"><span class="hex-part"></span></div>
+                                <div class="hex"><span class="hex-part"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row implementation">
+                        <article class="cell">
+                            <h2>{{ 'anatomy.implementation.title'|trans }}</h2>
+                            {{ 'anatomy.implementation.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                        </article>
+                        <div class="cell hex-grid">
+                            <div class="hex-holder">
+                                <div class="hex">
+                                    <span class="hex-part"></span>
+                                    <span class="icon icon-ribs"></span>
+                                </div>
+                                <div class="hex"><span class="hex-part">I</span></div>
+                                <div class="hex"><span class="hex-part">II</span></div>
+                                <div class="hex"><span class="hex-part">III</span></div>
+                                <div class="hex"><span class="hex-part">IV</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row implementation-list">
+                        <div class="cell">
+                            <ul>
+                                <li>
+                                    <div class="hex small"><span class="hex-part">I</span></div>
+                                    <h3>{{ 'anatomy.implementation.feature.anonymity.title'|trans }}</h3>
+                                    {{ 'anatomy.implementation.feature.anonymity.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                                <li>
+                                    <div class="hex small"><span class="hex-part">II</span></div>
+                                    <h3>{{ 'anatomy.implementation.feature.crypting.title'|trans }}</h3>
+                                    {{ 'anatomy.implementation.feature.crypting.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                                <li>
+                                    <div class="hex small"><span class="hex-part">III</span></div>
+                                    <h3>{{ 'anatomy.implementation.feature.sweeping.title'|trans }}</h3>
+                                    {{ 'anatomy.implementation.feature.sweeping.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                                <li>
+                                    <div class="hex small"><span class="hex-part">IV</span></div>
+                                    <h3>{{ 'anatomy.implementation.feature.defense.title'|trans }}</h3>
+                                    {{ 'anatomy.implementation.feature.defense.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <section class="row operations">
+                        <h2>{{ 'anatomy.operation.title'|trans }}</h2>
+                        <div class="cell">
+                            <ul>
+                                <li>
+                                    <div class="hex small"><span class="hex-part icon icon-key"></span></div>
+                                    <h3>{{ 'anatomy.operation.password.title'|trans }}</h3>
+                                    {{ 'anatomy.operation.password.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                                <li>
+                                    <div class="hex small"><span class="hex-part icon icon-keyhole"></span></div>
+                                    <h3>{{ 'anatomy.operation.landmark.title'|trans }}</h3>
+                                    {{ 'anatomy.operation.landmark.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cell">
+                            <div class="hex-grid">
+                                <div class="hex-holder">
+                                    <div class="hex">
+                                        <span class="hex-part"></span>
+                                        <span class="icon icon-arm"></span>
+                                    </div>
+                                    <div class="hex"><span class="hex-part"></span></div>
+                                    <div class="hex"><span class="hex-part"></span></div>
+                                    <div class="hex"><span class="hex-part"></span></div>
+                                    <div class="hex"><span class="hex-part"></span></div>
+                                    <div class="hex"><span class="hex-part"></span></div>
+                                </div>
+                            </div>
+                            <div class="button" id="recommendation-button"><a href="#">{{ 'recommendations.title'|trans }}</a></div>
+                        </div>
+                        <div class="cell">
+                            <ul>
+                                <li>
+                                    <div class="hex small"><span class="hex-part icon icon-plane"></span></div>
+                                    <h3>{{ 'anatomy.operation.send_message.title'|trans }}</h3>
+                                    {{ 'anatomy.operation.send_message.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                                <li>
+                                    <div class="hex small"><span class="hex-part icon icon-letter"></span></div>
+                                    <h3>{{ 'anatomy.operation.get_message.title'|trans }}</h3>
+                                    {{ 'anatomy.operation.get_message.text'|trans({'%paragraph_open%': "<p>", '%paragraph_close%': "</p>"})|raw }}
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    {% include 'AppBundle:Special:recommendations.html.twig' only %}
+
+                </div>
+            </section>
+            <section class="section" id="feedback">
+                <h2>{{ 'index.feedback.title'|trans }}</h2>
+                <h3>{{ 'index.feedback.subtitle'|trans }}</h3>
+
+                {% render controller('AppBundle:Form:feedback') %}
+
+            </section>
+
+            {% include 'AppBundle:Common:footer.html.twig' only %}
+
+        </main>
+    </div>
+{% endblock %}

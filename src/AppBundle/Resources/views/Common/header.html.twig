@@ -1,0 +1,14 @@
+{# src/AppBundle/Resources/views/Common/header.html.twig #}
+<header id="header">
+    <div id="manifest-button">
+        <span><span class="icon icon-anonymous"></span>{{ 'manifest.title'|trans }}</span>
+    </div>
+    <ul>
+        {% for locale in ['ru', 'ua', 'en'] %}
+            {% set activeClass = ( locale == app.request.locale ) ? 'class=active' : null %}
+            <li>
+                <a href="{{ path('index', { '_locale': locale }) }}" tabindex="-1" {{ activeClass }}>{{ locale }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</header>

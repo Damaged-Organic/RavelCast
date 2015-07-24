@@ -1,0 +1,45 @@
+# AppBundle/Service/config/services.yml
+services:
+    service.utility.salter:
+        class: AppBundle\Service\Utility\Salter
+
+    service.utility.hasher:
+        class: AppBundle\Service\Utility\Hasher
+
+    service.utility.cipher:
+        class: AppBundle\Service\Utility\Cipher
+
+    service.utility.yamler:
+        class: AppBundle\Service\Utility\Yamler
+
+    service.storage.flash_storage:
+        class: AppBundle\Service\Storage\FlashStorage
+        calls:
+            - [setSession, ["@session"]]
+
+    service.phase_filter.ravel_filter:
+        class: AppBundle\Service\PhaseFilter\RavelFilter
+        calls:
+            - [setSalter, ["@service.utility.salter"]]
+            - [setYamler, ["@service.utility.yamler"]]
+            - [setCipherFileManager, ["@entity_manager.cipher_file"]]
+            - [setPackageCounterManager, ["@entity_manager.package_counter"]]
+
+    service.phase_filter.unravel_filter:
+        class: AppBundle\Service\PhaseFilter\UnravelFilter
+        calls:
+            - [setHasher, ["@service.utility.hasher"]]
+            - [setCipher, ["@service.utility.cipher"]]
+            - [setYamler, ["@service.utility.yamler"]]
+            - [setFlashStorage, ["@service.storage.flash_storage"]]
+            - [setCipherFileManager, ["@entity_manager.cipher_file"]]
+
+    service.honey_pot:
+        class: AppBundle\Service\Validator\HoneyPot
+        calls:
+            - [setFlashStorage, ["@service.storage.flash_storage"]]
+
+    helper.mailer_shortcut:
+        class: AppBundle\Service\Helper\MailerShortcut
+        arguments:
+            - "@mailer"

@@ -1,0 +1,4 @@
+# src/AppBundle/Resources/translations/responses.en.yml
+feedback:
+    success: Thanks for your feedback. We'll definately consider it and will make appropriate conclusions
+    fail:    Something went wrong. Please, try to send your feedback one more time

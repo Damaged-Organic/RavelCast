@@ -1,0 +1,47 @@
+# src/AppBundle/Resources/translations/forms.en.yml
+ravel:
+    pass_phrase:
+        label:       Password
+        placeholder: "[here should be a secret Password]"
+
+    time_to_live_number:
+        label:       Message's lifetime
+        placeholder: "[here should be a message's lifetime in chosen units]"
+
+    data:
+        label:       Message
+        placeholder: "[here should be a message]"
+
+    choice:
+        minutes: Minutes
+        hours:   Hours
+        days:    Days
+    #invalid_message: Time units can be set in minutes, hours or days
+
+    submit: encrypt
+
+unravel:
+    pass_phrase:
+        label:       Password
+        placeholder: "[here should be a secret Password]"
+
+    salt_gamma:
+        label:       "[Landmark]"
+        placeholder: "[here should be a [Landmark] of expected message]"
+
+    submit: decrypt
+
+feedback:
+    name:
+        label:       Name
+        placeholder: "[here should be a name or pseudonym]"
+
+    email:
+        label:       E-mail
+        placeholder: "[here could be an e-mail address]"
+
+    message:
+        label:       Message
+        placeholder: "[here should be a message]"
+
+    submit: send

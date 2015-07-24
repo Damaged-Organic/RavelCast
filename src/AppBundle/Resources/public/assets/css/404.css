@@ -1,0 +1,35 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	404 start												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#content{
+	position: relative;
+}
+#content .section.not-found-holder{
+	position: absolute;
+	top: 52%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+#content .section.not-found-holder h2{
+	font-family: "Play", sans-serif;
+	font-size: 3em;
+	color: #000;
+	text-transform: uppercase;
+}
+
+#content .section.not-found-holder > span{
+	display: block;
+	font-family: "Play", sans-serif;
+	font-size: 6.5em;
+	color: #1e93c2;
+	text-align: center;
+	margin: 20px auto;
+	text-transform: uppercase;
+}
+#content .not-found-holder .button{ margin: 0 auto; }
+#content .not-found-holder .button span{ text-transform: uppercase; }
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*	404 end												*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

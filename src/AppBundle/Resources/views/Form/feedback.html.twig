@@ -1,0 +1,75 @@
+{# src/AppBundle/Resources/views/Form/feedback.html.twig #}
+{% form_theme feedbackForm _self %}
+
+{{ form_start(feedbackForm, {'attr': {'id': "feedback-form", 'autocomplete': "off"}}) }}
+
+    <div class="field-holder">
+        {{ form_widget(feedbackForm.name, {
+            'attr': {
+                'id': "feedback-name",
+                'data-rule-required': "true", 'data-msg-required': 'feedback.name.not_blank'|trans({}, 'validators'),
+                'data-rule-maxlength': "200", 'data-msg-maxlength': 'feedback.name.length.max'|trans({}, 'validators')
+            }
+        }) }}
+        {% block form_feedback_label_name %}
+            {{ block('base_form_label') }}
+            <label for="feedback-name">
+                {{ feedbackForm.name.vars.label|trans({}, 'forms') }}
+            </label>
+        {% endblock %}
+    </div>
+
+    <div class="field-holder">
+        {{ form_widget(feedbackForm.email, {
+            'attr': {
+                'id': "feedback-email",
+                'data-rule-email': "true", 'data-msg-email': 'feedback.email.valid'|trans({}, 'validators')
+            }
+        }) }}
+        {% block form_feedback_label_email %}
+            {{ block('base_form_label') }}
+            <label for="feedback-email">
+                {{ feedbackForm.email.vars.label|trans({}, 'forms') }}
+            </label>
+        {% endblock %}
+    </div>
+
+    <div class="field-holder">
+        {{ form_widget(feedbackForm.message, {
+            'attr': {
+                'id': "feedback-message",
+                'data-rule-required': "true", 'data-msg-required': 'feedback.message.not_blank'|trans({}, 'validators'),
+                'data-rule-minlength': "5", 'data-msg-minlength': 'feedback.message.length.min'|trans({}, 'validators'),
+                'data-rule-maxlength': "1500", 'data-msg-maxlength': 'feedback.message.length.max'|trans({}, 'validators')
+            }
+        }) }}
+        {% block form_feedback_label_message %}
+            {{ block('base_form_label') }}
+            <label for="feedback-message">
+                {{ feedbackForm.message.vars.label|trans({}, 'forms') }}
+            </label>
+        {% endblock %}
+    </div>
+
+    <button type="submit">
+        <span class="text">{{ 'feedback.submit'|trans({}, 'forms') }}</span>
+        <span class="icon icon-feedback"></span>
+    </button>
+
+{{ form_end(feedbackForm) }}
+
+<div class="process-holder">
+    <div class="inner">
+        <div class="loader-holder">
+            <span class="bar-holder">
+                <span class="symbols">WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2WNCenWVjnt6VloXTE2QY7eWNCenoXTE2</span>
+                <span class="bar"></span>
+            </span>
+        </div>
+        <div class="response-holder">
+            <p id="feedback-response"></p>
+        </div>
+    </div>
+    <span class="icon icon-close end-process"></span>
+</div>
+<div class="error-holder"></div>
