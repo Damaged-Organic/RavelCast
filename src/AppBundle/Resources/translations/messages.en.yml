@@ -146,6 +146,11 @@ error:
 
 error_state:
     title:
+        ie8: RavelCast doesn't exist for this browser
+        403: access here is forbidden
         404: nothing to do here
+        405: nothing good will come out of this
         500: something went wrong
-    back: back to biz
+    link:
+        home:   back to biz
+        brasst: update browser

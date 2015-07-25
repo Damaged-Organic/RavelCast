@@ -52,7 +52,7 @@ gulp.task("fonts", function(){
 });
 
 gulp.task("images", function(){
-	gulp.src("assets/images/*")
+	gulp.src("assets/images/**/*")
 		.pipe(imagemin({
 			progressive: true,
 			optimizationLevel: 4,
