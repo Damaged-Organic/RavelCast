@@ -9,6 +9,7 @@
 #intro .grid{
 	height: 100%;
 	position: absolute;
+	overflow: hidden;
 }
 #panel-holder{
 	width: 100%;
@@ -536,9 +537,8 @@
 }
 #anatomy .row{
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 20px auto 0;
 	padding: 40px 0;
-	margin-top: 20px;
 	position: relative;
 	overflow: hidden;
 }
@@ -597,7 +597,10 @@
 	border: 50px solid transparent;
 }
 #anatomy .hex-holder .hex:nth-child(1) .hex-part{ background: transparent; }
-
+#anatomy .row.intention{
+	margin: 40px auto 0;
+	padding: 50px 0 40px;
+}
 #anatomy .intention .hex-grid .hex-holder{ left: 45%; }
 #anatomy .intention .hex-holder .hex:nth-child(2){
 	top: -91px;
@@ -817,11 +820,11 @@
 	height: 100%;
 	background: #000 url(../images/blueprint.png) repeat 0 0 fixed;
 	position: relative;
-	margin-top: 20px;
 	padding-bottom: 40px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	overflow:hidden;
 }
 #feedback h2{
 	font-family: "Play", sans-serif;

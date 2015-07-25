@@ -1,10 +1,13 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	404 start												*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-#content{
+#page.not-found-holder{
+	overflow: hidden;
+}
+#page.not-found-holder #content{
 	position: relative;
 }
-#content .section.not-found-holder{
+#page.not-found-holder #content .section{
 	position: absolute;
 	top: 52%;
 	-webkit-transform: translateY(-50%);
@@ -12,14 +15,13 @@
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-#content .section.not-found-holder h2{
+#page.not-found-holder #content .section h2{
 	font-family: "Play", sans-serif;
 	font-size: 3em;
 	color: #000;
 	text-transform: uppercase;
 }
-
-#content .section.not-found-holder > span{
+#page.not-found-holder #content .section > span{
 	display: block;
 	font-family: "Play", sans-serif;
 	font-size: 6.5em;
@@ -28,8 +30,8 @@
 	margin: 20px auto;
 	text-transform: uppercase;
 }
-#content .not-found-holder .button{ margin: 0 auto; }
-#content .not-found-holder .button span{ text-transform: uppercase; }
+#page.not-found-holder #content .button{ margin: 0 auto; }
+#page.not-found-holder #content .button span{ text-transform: uppercase; }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*	404 end												*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
