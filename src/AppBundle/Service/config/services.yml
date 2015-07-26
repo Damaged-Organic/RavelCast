@@ -39,6 +39,9 @@ services:
         calls:
             - [setFlashStorage, ["@service.storage.flash_storage"]]
 
+    service.browsers_versions:
+        class: AppBundle\Service\Validator\BrowsersVersions
+
     helper.mailer_shortcut:
         class: AppBundle\Service\Helper\MailerShortcut
         arguments:

@@ -2,7 +2,8 @@
 // AppBundle/Controller/StateController.php
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller,
+    Symfony\Component\HttpKernel\Exception\HttpException;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method,
     Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -13,6 +14,9 @@ class StateController extends Controller
 {
     /** @DI\Inject("entity_manager.package_counter") */
     private $_packageCounter;
+
+    /** @DI\Inject("service.browsers_versions") */
+    private $_browsersVersions;
 
     /**
      * @Method({"GET"})
@@ -35,7 +39,12 @@ class StateController extends Controller
      */
     public function indexAction()
     {
-        $packagesNumber = str_pad($this->_packageCounter->getSentPackages(), 9, '0', STR_PAD_LEFT);
+        // IE8- access denied exception
+        if( $this->_browsersVersions->isLesserIE($_SERVER['HTTP_USER_AGENT']) ){
+            throw new HttpException(403, $this->get('translator')->trans('error_state.title.ie8'));
+        }
+
+        $packagesNumber = str_pad($this->_packageCounter->getSentPackages(), 8, '0', STR_PAD_LEFT);
 
         return $this->render('AppBundle:State:index.html.twig', [
             'packagesNumber' => $packagesNumber
