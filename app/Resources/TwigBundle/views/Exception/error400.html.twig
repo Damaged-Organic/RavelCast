@@ -1,0 +1,30 @@
+{# app/Resources/TwigBundle/views/Exception/error400.html.twig #}
+{% extends 'AppBundle::layout.html.twig' %}
+
+{# Fast "_locale" hack for twig exception #}
+{% set host = app.request.getHost|split(".") %}
+{% if host[0] in ['ua','en','ru'] %}
+    {% set locale = host[0] %}
+{% else %}
+    {% set locale = 'ru' %}
+{% endif %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/assets/css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/app/assets/css/common.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div id="not-supported">
+        <div class="inner">
+            <p>{{ exception.message }}</p>
+            <div class="button">
+                <a href="http://{{ locale }}.brasst.net.ua" target="_blank">
+                    {{ 'error_state.link.brasst'|trans({}, "messages", locale) }}
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

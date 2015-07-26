@@ -41,7 +41,7 @@ class StateController extends Controller
     {
         // IE8- access denied exception
         if( $this->_browsersVersions->isLesserIE($_SERVER['HTTP_USER_AGENT']) ){
-            throw new HttpException(403, $this->get('translator')->trans('error_state.title.ie8'));
+            throw new HttpException(400, $this->get('translator')->trans('error_state.title.ie8'));
         }
 
         $packagesNumber = str_pad($this->_packageCounter->getSentPackages(), 8, '0', STR_PAD_LEFT);
