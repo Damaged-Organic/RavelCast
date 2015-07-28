@@ -44,7 +44,7 @@ class StateController extends Controller
             throw new HttpException(400, $this->get('translator')->trans('error_state.title.ie8'));
         }
 
-        $packagesNumber = str_pad($this->_packageCounter->getSentPackages(), 8, '0', STR_PAD_LEFT);
+        $packagesNumber = str_pad($this->_packageCounter->getSentPackages(), 9, '0', STR_PAD_LEFT);
 
         return $this->render('AppBundle:State:index.html.twig', [
             'packagesNumber' => $packagesNumber

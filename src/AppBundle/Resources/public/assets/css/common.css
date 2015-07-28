@@ -810,7 +810,7 @@ form input[type=hidden]{
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 .error-holder{
 	display: none;
-	width: 400px;
+	width: 50%;
 	position: absolute;
 	top: 0;
 	left: 0;

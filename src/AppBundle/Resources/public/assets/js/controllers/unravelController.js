@@ -150,7 +150,7 @@
 			self.unpackMessage(cipherData);
 		})
 		.fail(function(error){
-			error = JSON.parse(error);
+			error = JSON.parse(error.responseText);
 
 			self.setError(error.message);
 			self.el.removeClass("handling");

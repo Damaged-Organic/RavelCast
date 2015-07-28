@@ -40,7 +40,7 @@
 				self.count = response.count;
 				self.el.trigger("counterUpdate");
 			});
-		}, 3000);
+		}, 10000);
 	}
 	function pad(num, size){
 		return ("0000000000" + num).substr(-size);
