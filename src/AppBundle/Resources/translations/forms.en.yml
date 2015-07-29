@@ -27,7 +27,7 @@ unravel:
 
     salt_gamma:
         label:       "[Landmark]"
-        placeholder: "[here should be a [Landmark] of expected message]"
+        placeholder: "[here should be a [Landmark] of the expected message]"
 
     submit: decrypt
 

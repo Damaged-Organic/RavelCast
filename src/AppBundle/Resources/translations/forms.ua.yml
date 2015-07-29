@@ -29,7 +29,7 @@ unravel:
         label:       "[Маркер]"
         placeholder: "[тут має бути [Маркер] очікуваного повідомлення]"
 
-    submit: расшифрувати
+    submit: розшифрувати
 
 feedback:
     name:

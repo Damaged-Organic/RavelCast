@@ -95,20 +95,20 @@ anatomy:
             text: >
                 %paragraph_open%This is a partial message identifier that can be freely transmitted through social networks,
                 instant messengers, email or SMS to the person who should receive your message. The [Landmark] itself is
-                useless without your password: it won’t allow anyone to receive your message - or even learn about its
+                useless without your Password: it won’t allow anyone to receive your message - or even learn about its
                 existence.%paragraph_close%
         send_message:
             title: To send a message
             text: >
-                %paragraph_open%On the start page, press “Send message” button, and the “Ravel” form should appear to your
-                left. Enter your message and password in it, and press “Send”. Additionally, you can specify the lifetime
+                %paragraph_open%On the start page, press “Send” button, and the “Ravel” form should appear to your
+                left. Enter your message and Password in it, and press “Encrypt”. Additionally, you can specify the lifetime
                 of the message, which is 42 hours by default (maximum lifetime is 42 days). After sending you will receive
                 a [Landmark].%paragraph_close%
         get_message:
             title: To get a message
             text: >
-                %paragraph_open%On the start page, press “Receive message” button, and the “Unravel” form should appear to
-                your right. Enter [Landmark] and your Password in it and press “Receive”. If these credentials are correct
+                %paragraph_open%On the start page, press “Receive” button, and the “Unravel” form should appear to
+                your right. Enter [Landmark] and your Password in it and press “Decrypt”. If these credentials are correct
                 and message exists, you will receive it%paragraph_close%
 
 recommendations:
@@ -119,7 +119,7 @@ recommendations:
             from time to time (remember Hogwarts?). The Password itself could be either a single word, or sequence of
             symbols, or even a complete sentence.
         2: >
-            The best and most secure way to share your password with somebody is to tell it in person.
+            The best and most secure way to share your Password with somebody is to tell it in person.
         3: >
             For maximum security try to write message in a way that only you and your contact will understand.
         4: >

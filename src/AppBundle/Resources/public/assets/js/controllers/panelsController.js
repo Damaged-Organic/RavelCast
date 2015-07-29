@@ -23,6 +23,8 @@
 			    .on("click", ".close-panel", $.proxy(this.handlePanelClose, this));
 	}
 	function handlePanel(e){
+		e.preventDefault();
+
 		var target = $(e.target).closest(".switch-panel");
 		this.switchPanel(target.data("switch"));
 	}
