@@ -52,8 +52,8 @@ anatomy:
     implementation:
         title: Implementation
         text: >
-            %paragraph_open%From the beginning of the project development we knew that user of RavelCast should not be
-            shackled with any chains of demands and requirements.%paragraph_close%
+            %paragraph_open%The ultimate concept of RavelCast is the absence of chains of demands and requirements, which
+            shackles user during exchange of information or casts doubt about its safety.%paragraph_close%
             %paragraph_open%With this thought we’ve raised four pillars which would allow confidential and easy exchange
             of relatively short (about 4200 symbols) secret messages.%paragraph_close%
         feature:
