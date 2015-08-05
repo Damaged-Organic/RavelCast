@@ -3,6 +3,12 @@ default:
     title:    "[RavelCast]"
     subtitle: Anonymous information exchange utility
 
+metadata:
+    description: >
+        RavelCast allows to share text messages of any content, completely anonymous, without registration and any clues
+        about users identity. Preliminary messages encryption and deletion upon receiving guarantees that your information
+        will be accessible only to those who intended to see it. And nobody else.
+
 manifest:
     title: Manifest
     truth: >
