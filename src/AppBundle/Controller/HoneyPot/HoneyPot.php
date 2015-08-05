@@ -16,7 +16,13 @@ class HoneyPot extends Controller
     private $_honeyPot;
 
     /**
-     * @Route("/requestHoneyPot", name="request_honey_pot")
+     * @Route(
+     *      "/{_locale}/requestHoneyPot",
+     *      name="request_honey_pot",
+     *      host="{domain}",
+     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
+     * )
      */
     public function requestHoneyPotAction()
     {

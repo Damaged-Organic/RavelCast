@@ -21,18 +21,11 @@ class StateController extends Controller
     /**
      * @Method({"GET"})
      * @Route(
-     *      "/",
+     *      "/{_locale}",
      *      name="index",
-     *      host="{_locale}.{domain}",
-     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
-     * )
-     * @Route(
-     *      "/",
-     *      name="index_default",
      *      host="{domain}",
      *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"domain" = "%domain%"}
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
      * )
      *
      * Initial and only system state so far

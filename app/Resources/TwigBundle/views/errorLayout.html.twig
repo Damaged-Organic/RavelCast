@@ -2,9 +2,9 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {# Fast "_locale" hack for twig exception #}
-{% set host = app.request.getHost|split(".") %}
-{% if host[0] in ['ua','en','ru'] %}
-    {% set locale = host[0] %}
+{% set host = app.request.requestUri|split("/") %}
+{% if host[1] in ['ua','en','ru'] %}
+    {% set locale = host[1] %}
 {% else %}
     {% set locale = 'ru' %}
 {% endif %}

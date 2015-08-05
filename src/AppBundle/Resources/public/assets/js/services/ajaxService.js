@@ -23,7 +23,7 @@
 		if(typeof(url) !== "string") return;
 
 		return $.ajax({
-			url: url,
+			url: window.locale + url,
 			type: "POST",
 			data: data || {}
 		})			

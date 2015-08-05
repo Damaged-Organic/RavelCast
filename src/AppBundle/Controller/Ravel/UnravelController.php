@@ -44,18 +44,11 @@ class UnravelController extends Controller
     /**
      * @Method({"POST"})
      * @Route(
-     *      "/validateGamma",
+     *      "/{_locale}/validateGamma",
      *      name="validate_gamma",
-     *      host="{_locale}.{domain}",
-     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"_locale" = "%locale%|en|ru", "domain" = "%domain%"}
-     * )
-     * @Route(
-     *      "/validateGamma",
-     *      name="validate_gamma_default",
      *      host="{domain}",
      *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"domain" = "%domain%"}
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
      * )
      *
      * Phase 1: Client sends Gamma hash to lookup database for his cipherData
@@ -119,18 +112,11 @@ class UnravelController extends Controller
     /**
      * @Method({"POST"})
      * @Route(
-     *      "/validateBeta",
+     *      "/{_locale}/validateBeta",
      *      name="validate_beta",
-     *      host="{_locale}.{domain}",
-     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"_locale" = "%locale%|en|ru", "domain" = "%domain%"}
-     * )
-     * @Route(
-     *      "/validateBeta",
-     *      name="validate_beta_default",
      *      host="{domain}",
      *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"domain" = "%domain%"}
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
      * )
      *
      * Phase 2: Client sends Beta hash to validate whether DB row that matches Gamma hash also matches his Beta hash.

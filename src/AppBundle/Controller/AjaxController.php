@@ -18,18 +18,11 @@ class AjaxController extends Controller
     /**
      * @Method({"POST"})
      * @Route(
-     *      "/packagesNumber",
+     *      "/{_locale}/packagesNumber",
      *      name="packages_number",
-     *      host="{_locale}.{domain}",
-     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
-     * )
-     * @Route(
-     *      "/packagesNumber",
-     *      name="packages_number_default",
      *      host="{domain}",
      *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"domain" = "%domain%"}
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
      * )
      */
     public function packagesNumberAction()

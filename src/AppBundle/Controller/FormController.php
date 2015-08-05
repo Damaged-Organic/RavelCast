@@ -80,18 +80,11 @@ class FormController extends Controller
     /**
      * @Method({"POST"})
      * @Route(
-     *      "/feedbackSend",
+     *      "/{_locale}/feedbackSend",
      *      name="feedback_send",
-     *      host="{_locale}.{domain}",
-     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
-     * )
-     * @Route(
-     *      "/feedbackSend",
-     *      name="feedback_send_default",
      *      host="{domain}",
      *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"domain" = "%domain%"}
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
      * )
      */
     public function feedbackSendAction(Request $request)
@@ -114,7 +107,7 @@ class FormController extends Controller
                 'feedback'  => $feedback
             ]);
 
-            if( $this->_mailerShortcut->sendMail("webmaster@cheers-development.in.ua", "webmaster@cheers-development.in.ua", $subject, $body) ) {
+            if( $this->_mailerShortcut->sendMail("feedback@ravelcast.net", "feedback@ravelcast.net", $subject, $body) ) {
                 $response = [
                     'data' => ['message' => $this->get('translator')->trans("feedback.success", [], 'responses')],
                     'code' => 200

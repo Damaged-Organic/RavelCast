@@ -7,7 +7,7 @@
 /app/logs/*
 !app/logs/.gitkeep
 /app/config/common/*
-!/app/config/common/.gitkeep
+!/app/config/common/config.yml
 
 /bin/
 

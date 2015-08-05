@@ -45,18 +45,11 @@ class RavelController extends Controller
     /**
      * @Method({"POST"})
      * @Route(
-     *      "/requestSalts",
+     *      "/{_locale}/requestSalts",
      *      name="request_salts",
-     *      host="{_locale}.{domain}",
-     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"_locale" = "%locale%|en|ru", "domain" = "%domain%"}
-     * )
-     * @Route(
-     *      "/requestSalts",
-     *      name="request_salts_default",
      *      host="{domain}",
      *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"domain" = "%domain%"}
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
      * )
      *
      * Phase 1: Client makes request to get Alpha, Beta and Gamma salts to hash them with passPhrase.
@@ -109,18 +102,11 @@ class RavelController extends Controller
     /**
      * @Method({"POST"})
      * @Route(
-     *      "/stashData",
+     *      "/{_locale}/stashData",
      *      name="stash_data",
-     *      host="{_locale}.{domain}",
-     *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"_locale" = "%locale%|en|ru", "domain" = "%domain%"}
-     * )
-     * @Route(
-     *      "/stashData",
-     *      name="stash_data_default",
      *      host="{domain}",
      *      defaults={"_locale" = "%locale%", "domain" = "%domain%"},
-     *      requirements={"domain" = "%domain%"}
+     *      requirements={"_locale" = "%locale%|ua|en", "domain" = "%domain%"}
      * )
      *
      * Phase 2: Client sends primarily encrypted cipherData with hashes and TTL, to store them in DB.

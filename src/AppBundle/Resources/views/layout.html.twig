@@ -31,5 +31,8 @@
 {% endblock %}
 
 {% block javascripts %}
+    <script>
+        window.locale = "{{ app.request.locale }}";
+    </script>
     <script src="{{ asset('bundles/app/builds/js/bundle.min.js') }}"></script>
 {% endblock %}
