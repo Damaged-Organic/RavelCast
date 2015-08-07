@@ -3,7 +3,15 @@
 
 {% block meta %}
     <meta name="robots" content="index, follow">
-    <meta name="description" content="{{ 'metadata.description'|trans }}" >
+    <meta name="description" content="{{ 'metadata.description'|trans }}">
+    {# Open Graph #}
+    <meta property="og:url" content="{{ url('index', { '_locale': app.request.locale }) }}">
+    <meta property="og:title" content="{{ 'default.subtitle'|trans }}">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ 'metadata.description'|trans }}">
+    <meta property="og:site_name" content="{{ 'default.title'|trans }}">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image" content="{{ asset('bundles/app/builds/ravelcast_logo.jpg', absolute=true) }}">
 {% endblock %}
 
 {% block locale %}

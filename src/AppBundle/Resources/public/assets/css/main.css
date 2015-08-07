@@ -599,7 +599,7 @@
 #anatomy .hex-holder .hex:nth-child(1) .hex-part{ background: transparent; }
 #anatomy .row.intention{
 	margin: 40px auto 0;
-	padding: 50px 0 40px;
+	padding: 55px 0 45px;
 }
 #anatomy .intention .hex-grid .hex-holder{ left: 45%; }
 #anatomy .intention .hex-holder .hex:nth-child(2){
